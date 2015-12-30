@@ -33,7 +33,10 @@ public class Movement
     {
         brk = (int)_brk;
         vBar = v; omega = w;    //omega return angle(-180~+180) starts from x axis.
-        angle = omega;
+        angle = omega+90;
+        if(angle>180) {
+            angle -= 360;
+        }
         speed = vBar*2000;      //v return speed(-2~+2)
         Log.i("Movement set", "angle=" + angle + ",speed=" + speed + ",vBar=" + vBar + ",omega=" + omega);
         if (trySend==null) {
